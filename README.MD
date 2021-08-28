@@ -1,69 +1,58 @@
-# ENSF 592 Spring 2021 - Assignment 6
+# ENSF 592 Spring 2021 - Assignment 5
 
 ## 📚 Learning Outcomes
-* Create a simple Flask application with multiple routes
-* Scrape and parse data from a single web page
-* Store and manipulate data within a DataFrame
-* Print a DataFrame object to a webpage
+* Manipulate and analyze data using Pandas DataFrame objects
+* Read Excel data into a DataFrame
+* Use hierarchical indexing to sort and slice data
+* Process data according to specifications
+* Find missing values in a dataset
+* Operate on data in Pandas
 
 ## 💻 Program Specifications
-Follow along with the Lab 12 demonstration. The demo program is a collaborative effort between Garth Johnson and Emily Marasco, and is used with permission.
-Before submitting your files, you must complete the following tasks:
-* Change "STUDENT NAME" to your own name in the code.
-* Follow the "/hello/<name>" route by entering your own name. Take a screenshot of the display. 
-* Modify the book table to display a new column with the sale price (reduced by 25%). Submit a screenshot of the modified table being displayed.
-* Create a new route "/learn" that displays one thing that you learned in ENSF 592. Submit a screenshot of your answer being displayed.
-* Your submitted code must match your provided screenshots.
-* Your code will be run by the instructor/TAs as your end user.
-* FAQs about the assignment will be answered in Lab 12 and on the D2L discussion boards. Please check the boards for any clarifications before submitting.
+The United Nations and other international organizations collect data on various demographics worldwide.
+You are being asked to design a terminal-based application for computing and printing statistics based on a provided UN sub-region name.
+Your application must meet the following design specifications:
+* Your final output should match the given examples (see attached screenshots)
+* Stage 1: DataFrame Creation
+  1. Import the provided data into a Pandas DataFrame. 
+  2. You may not change or sort the Excel file.
+  3. You may not hard-code/copy-paste any information into your program except for the Excel column names.
+  4. Index the data in the following order: UN Region -> UN Sub-Region -> Country
+  5. All of the below specifications must show the data in the correctly sorted order.
+  6. You may not use global variables. You must import the data within your main function.
+* Stage 2: User Entry
+  1. Prompt the user to enter a sub-region name. 
+  2. If the name does not exist within the given data, raise a ValueError to print “You must enter a valid UN sub-region name.” 
+  3. Again, you must not hard-code the names (the UN could decide to change the sub-region names at any time!).
+* Stage 3: Find Missing Data
+  1. It is not always possible to collect complete data from all countries. Some countries do not have sq km area measurements. Write a function called `find_null()` to determine whether any area data is missing for the chosen sub-region.
+  2. Your function may take in any arguments or return any values of your choosing.
+  3. If all sq km data is available for the sub-region, print the message "There are no missing sq km values for this sub-region."
+  4. If any data is missing, print the UN Region/UN Sub-Region/Country information and the NaN sq km value.
+* Stage 4: Sub-Region Calculations
+  1. Add two new columns to the sub-region data: a) the change in population from 2000 to 2020 and b) the current population density (num of people per sq km).
+  2. Print all columns for each country in the sub-region.
+  3. Conservationists are concerned about the number of threatened plant, bird, fish, and mammal species in each country. Print the number of threatened species in each category for each country in the sub-region.
+  4. To better estimate possible rehabilitation and sanctuary space, calculate and print the sq km area per the total number of threatened species for each country in the sub-region.
+  5. Put a clear header before each printed dataset for better readability.
+* Your code should include and use at least one multi-index Pandas DataFrame, at least one IndexSlice object, a user-defined function called `find_null`, at least one masking operation, and at least one built-in Pandas or NumPy computational method.
+* Your code must follow the conventions discussed so far in the course (names_with_underscores, ClassNames, four spaces for indentations, spaces between variables/operators, comments throughout, etc.)
+* All classes, methods, and functions must contain docstring documentation.
+    1. For each class, include a functionality summary and describe any class and/or instance variables (do not include a separate docstring for \_\_init\_\_)
+    2. For each method/function, include a functionality summary and describe parameters and return values (or specify if there are none)
+    3. Main functions do not need a docstring but should be well-commented 
+* Your code will be run by the TAs as your end user.
+* FAQs about the assignment will be answered on the D2L discussion boards. Please check the boards for any clarifications before submitting.
 * The grading rubric will be posted to D2L.
 
-To run your web application:
-MAC/Linux
-* Make sure you are working in the correct directory
-* `export FLASK_ENV=development`
-* `export FLASK_APP=web_data_app.py`
-* `flask run`
-
-Windows
-* Make sure you are working in the correct directory
-* `set FLASK_ENV=development`
-* `set FLASK_APP=web_data_app.py`
-* `flask run`
-
-Exporting the `FLASK_ENV` as `development` enables some nice features that you can explore later on (see Visual Studio's [Run the App Debugger](https://code.visualstudio.com/docs/python/tutorial-flask#_run-the-app-in-the-debugger) page for more info on how to setup/use it from within VS), and disables some anoying reminders to NOT use this in 'production' without a proper WSGI (or similar interface).
-
-Once the application is running, browse the local system on port `5000` (typically http://localhost:5000/).  When you do, you should see the friendly message "Hello World!" in your browser and the following in the terminal where the application is running:
-    ❯ flask run
-    * Serving Flask app "web_data_app.py" (lazy loading)
-    * Environment: development
-    * Debug mode: on
-    * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-    * Restarting with stat
-    * Debugger is active!
-    * Debugger PIN: 290-425-530
-    127.0.0.1 - - [25/Apr/2021 12:04:00] "GET / HTTP/1.1" 200 -
-    127.0.0.1 - - [25/Apr/2021 12:04:01] "GET /favicon.ico HTTP/1.1" 404 -
-
-If you followed the ENSF 592 installation guidelines, you should have all the necessary modules ready to go.
-If you encounter issues, run the requirements file using `pip install -r requirements.txt` to ensure you have the correct versions necessary.
-Make sure you are in your assignment working directory and your ENSF 592 virtual environment.
-
 ## 📝 Assignment Tasks
-* If you weren't able to attend the June 15th lab, be sure to watch the recording and follow along.
+* Make sure to watch video lessons 18 - 24, labs 8 and 9, and review the corresponding Jupyter Notebooks.
 * Clone this repository to your local computer.
 * Open VSCode and start a new terminal. Make sure that your `ensf592` environment is activated.
-* `web_data_app.py` is provided as a starting point. Add your name to the header.
-* Remember to test your program execution via the terminal: `run flask`
-* Fulfill the tasks above and upload the successful execution screenshots to your assignment repository.
-* Commit your screenshots and code.
+* `world_data.py` is provided as a starting point. Fill in the header with your own information.
+* Remember to test your program execution via the terminal: `python world_data.py`
+* Take a screenshot of your successful program run and upload it to your assignment repository.
+* Commit your screenshot and code.
 * Push your local git history to github: `git push origin main`
-* Submit your repository HTTPS link to the Assignment 6 D2L dropbox.
-* Tip: If you want to learn more about a specific aspect of Python or Flask, remember to take a look at the official documentation!
-
-## 📚 Developer Comments
-First off, much of this is inspired by [RealPython](https://realpython.com/flask-by-example-part-1-project-setup/) and various other sites, pages, and people encountered through the teaching and learning process.
-This is a basic 'quick n simple' Python-Flask application tutorial written for general usage of Python/Flask. This will help a new (but probably not noob) Pythonista learn how to set up a basic web server application in Python with Flask running on a local server, and assumes that the the developer is using Visual Studio Code as their IDE of choice.
-Flask is a Model-View-Controller (MVC) framework (see [this page](https://www.guru99.com/mvc-vs-mvvm.html) for some insight to what MVC is and isn't, and also Real Python's [MVC Explained](https://realpython.com/the-model-view-controller-mvc-paradigm-summarized-with-legos/) page for more details.
-If you'd like to try scraping more websites, take a look at http://toscrape.com/
-If you'd like to expand on the book catalog example (without Flask), take a look at this link: https://towardsdatascience.com/a-really-gentle-introduction-to-web-scraping-in-python-83cb9e536db8
+* Submit your repository HTTPS link to the Assignment 5 D2L dropbox.
+* Tip: If you want to learn more about a specific aspect of a Python object or the functionality of Pandas, remember to take a look at the official documentation!
