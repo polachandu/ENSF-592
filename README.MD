@@ -1,41 +1,39 @@
-# ENSF 592 Spring 2021 - Assignment 5
+# ENSF 592 Spring 2021 - Assignment 4
 
 ## 📚 Learning Outcomes
-* Manipulate and analyze data using Pandas DataFrame objects
-* Read Excel data into a DataFrame
-* Use hierarchical indexing to sort and slice data
+* Create multi-dimensional arrays using NumPy
+* Validate user input through exception handling
+* Use dictionaries to store and search for values
 * Process data according to specifications
-* Find missing values in a dataset
-* Operate on data in Pandas
+* Manipulate NumPy arrays
+* Determine and execute NumPy array computations
 
 ## 💻 Program Specifications
-The United Nations and other international organizations collect data on various demographics worldwide.
-You are being asked to design a terminal-based application for computing and printing statistics based on a provided UN sub-region name.
+The City of Calgary publishes data on various demographics, include school enrollment. You are being asked to design a terminal-based application for computing and printing statistics based on given input.
 Your application must meet the following design specifications:
 * Your final output should match the given examples (see attached screenshots)
-* Stage 1: DataFrame Creation
-  1. Import the provided data into a Pandas DataFrame. 
-  2. You may not change or sort the Excel file.
-  3. You may not hard-code/copy-paste any information into your program except for the Excel column names.
-  4. Index the data in the following order: UN Region -> UN Sub-Region -> Country
-  5. All of the below specifications must show the data in the correctly sorted order.
-  6. You may not use global variables. You must import the data within your main function.
-* Stage 2: User Entry
-  1. Prompt the user to enter a sub-region name. 
-  2. If the name does not exist within the given data, raise a ValueError to print “You must enter a valid UN sub-region name.” 
-  3. Again, you must not hard-code the names (the UN could decide to change the sub-region names at any time!).
-* Stage 3: Find Missing Data
-  1. It is not always possible to collect complete data from all countries. Some countries do not have sq km area measurements. Write a function called `find_null()` to determine whether any area data is missing for the chosen sub-region.
-  2. Your function may take in any arguments or return any values of your choosing.
-  3. If all sq km data is available for the sub-region, print the message "There are no missing sq km values for this sub-region."
-  4. If any data is missing, print the UN Region/UN Sub-Region/Country information and the NaN sq km value.
-* Stage 4: Sub-Region Calculations
-  1. Add two new columns to the sub-region data: a) the change in population from 2000 to 2020 and b) the current population density (num of people per sq km).
-  2. Print all columns for each country in the sub-region.
-  3. Conservationists are concerned about the number of threatened plant, bird, fish, and mammal species in each country. Print the number of threatened species in each category for each country in the sub-region.
-  4. To better estimate possible rehabilitation and sanctuary space, calculate and print the sq km area per the total number of threatened species for each country in the sub-region.
-  5. Put a clear header before each printed dataset for better readability.
-* Your code should include and use at least one multi-index Pandas DataFrame, at least one IndexSlice object, a user-defined function called `find_null`, at least one masking operation, and at least one built-in Pandas or NumPy computational method.
+* Stage 1: Array Creation
+  1. Create a 3-dimensional array using the provided high school enrollment data. You must use a NumPy array.
+  2. Print the shape and dimensions of the array.
+* Stage 2: School Stats
+  1. Prompt the user to enter either the name or numerical code of a school. If the name or code do not exist within the given data, raise a ValueError to print “You must enter a valid school name or code.”
+  2. Calculate and print the answers for the following school-specific statistics, using the given output as a template.
+    * The school name and school code
+    * Mean enrollment for Grade 10 across all years
+    * Mean enrollment for Grade 11 across all years
+    * Mean enrollment for Grade 12 across all years
+    * Highest enrollment for a single grade within the entire time period
+    * Lowest enrollment for a single grade within the entire time period
+    * Total enrollment for each year from 2013 to 2020
+    * Education planners want to better understand the impact of large-scale classes in high schools. Determine if any enrollment numbers were over 500. If not, print “No enrollments over 500.” If yes, print the median value of the >500 enrollments.
+* Stage 3: General Stats
+  1. Every run of your program should also calculate and print the answers for the following general statistics. These will be the same for every run.
+    * The mean enrollment in 2013
+    * The mean enrollment in 2020
+    * Total graduating class of 2020 across all schools
+    * Highest enrollment for a single grade within the entire time period (across all schools)
+    * Lowest enrollment for a single grade within the entire time period (across all schools)
+* Your code should include and use at least one 3-dimensional NumPy array, at least one subarray view, at least four different NumPy computational functions, at least one masking operation, and at least one dictionary.
 * Your code must follow the conventions discussed so far in the course (names_with_underscores, ClassNames, four spaces for indentations, spaces between variables/operators, comments throughout, etc.)
 * All classes, methods, and functions must contain docstring documentation.
     1. For each class, include a functionality summary and describe any class and/or instance variables (do not include a separate docstring for \_\_init\_\_)
@@ -46,13 +44,13 @@ Your application must meet the following design specifications:
 * The grading rubric will be posted to D2L.
 
 ## 📝 Assignment Tasks
-* Make sure to watch video lessons 18 - 24, labs 8 and 9, and review the corresponding Jupyter Notebooks.
+* Make sure to watch video lessons 15 - 17, labs 6 and 7, and review the corresponding Jupyter Notebooks.
 * Clone this repository to your local computer.
 * Open VSCode and start a new terminal. Make sure that your `ensf592` environment is activated.
-* `world_data.py` is provided as a starting point. Fill in the header with your own information.
-* Remember to test your program execution via the terminal: `python world_data.py`
+* `school_data.py` is provided as a starting point. Fill in the header with your own information.
+* Remember to test your program execution via the terminal: `python school_data.py`
 * Take a screenshot of your successful program run and upload it to your assignment repository.
 * Commit your screenshot and code.
 * Push your local git history to github: `git push origin main`
-* Submit your repository HTTPS link to the Assignment 5 D2L dropbox.
-* Tip: If you want to learn more about a specific aspect of a Python object or the functionality of Pandas, remember to take a look at the official documentation!
+* Submit your repository HTTPS link to the Assignment 3 D2L dropbox.
+* Tip: If you want to learn more about a specific aspect of a Python object or the functionality of NumPy, remember to take a look at the official documentation!
