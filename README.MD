@@ -1,56 +1,62 @@
-# ENSF 592 Spring 2021 - Assignment 4
+# ENSF 592 Spring 2021 - Assignment 3
 
 ## 📚 Learning Outcomes
-* Create multi-dimensional arrays using NumPy
+* Accept user input through varied menu options
 * Validate user input through exception handling
-* Use dictionaries to store and search for values
 * Process data according to specifications
-* Manipulate NumPy arrays
-* Determine and execute NumPy array computations
+* Iterate through varied values using compound data types
+* Manipulate strings and apply regular expressions
+* Develop and implement user-defined classes
+* Print formatted output according to given specifications
 
 ## 💻 Program Specifications
-The City of Calgary publishes data on various demographics, include school enrollment. You are being asked to design a terminal-based application for computing and printing statistics based on given input.
+A cipher is an algorithm used for encrypting or decrypting information. You are being asked to design a terminal-based application for encoding and decoding text based on a provided cipher algorithm.
 Your application must meet the following design specifications:
-* Your final output should match the given examples (see attached screenshots)
-* Stage 1: Array Creation
-  1. Create a 3-dimensional array using the provided high school enrollment data. You must use a NumPy array.
-  2. Print the shape and dimensions of the array.
-* Stage 2: School Stats
-  1. Prompt the user to enter either the name or numerical code of a school. If the name or code do not exist within the given data, raise a ValueError to print “You must enter a valid school name or code.”
-  2. Calculate and print the answers for the following school-specific statistics, using the given output as a template.
-    * The school name and school code
-    * Mean enrollment for Grade 10 across all years
-    * Mean enrollment for Grade 11 across all years
-    * Mean enrollment for Grade 12 across all years
-    * Highest enrollment for a single grade within the entire time period
-    * Lowest enrollment for a single grade within the entire time period
-    * Total enrollment for each year from 2013 to 2020
-    * Education planners want to better understand the impact of large-scale classes in high schools. Determine if any enrollment numbers were over 500. If not, print “No enrollments over 500.” If yes, print the median value of the >500 enrollments.
-* Stage 3: General Stats
-  1. Every run of your program should also calculate and print the answers for the following general statistics. These will be the same for every run.
-    * The mean enrollment in 2013
-    * The mean enrollment in 2020
-    * Total graduating class of 2020 across all schools
-    * Highest enrollment for a single grade within the entire time period (across all schools)
-    * Lowest enrollment for a single grade within the entire time period (across all schools)
-* Your code should include and use at least one 3-dimensional NumPy array, at least one subarray view, at least four different NumPy computational functions, at least one masking operation, and at least one dictionary.
+* Your user interface should prompt the user to input the following information:
+  1. Whether they would like to encode or decode their text
+  2. Enter their text to be encoded/decoded
+  3. Enter their cipher
+* You may prompt for the input to be entered in any form or order you like, but be sure to give the user clear instructions.
+* You must validate that the provided cipher is exactly 26 elements long and only contains lowercase characters from a to z or digits from 0 to 9.
+* If the cipher does not meet the criteria, you must handle a ValueError exception by providing a message back to the user and allow them to re-enter their cipher without terminating the program.
+* Any entered string is valid for encoding/decoding, however:
+  * Any punctuation/spaces/etc. within the text should be removed- only letters are encoded/decoded.
+  * The resulting coded or decoded message must be all lowercase letters with no spaces in between.
+* Your code should include and use at least two classes of your own creation, at least three user-defined functions aside from \_\_init\_\_ or main(), at least one iterable object, and at least one regular expression.
 * Your code must follow the conventions discussed so far in the course (names_with_underscores, ClassNames, four spaces for indentations, spaces between variables/operators, comments throughout, etc.)
-* All classes, methods, and functions must contain docstring documentation.
-    1. For each class, include a functionality summary and describe any class and/or instance variables (do not include a separate docstring for \_\_init\_\_)
-    2. For each method/function, include a functionality summary and describe parameters and return values (or specify if there are none)
-    3. Main functions do not need a docstring but should be well-commented 
+* All classes and functions must contain docstring documentation.
 * Your code will be run by the TAs as your end user.
 * FAQs about the assignment will be answered on the D2L discussion boards. Please check the boards for any clarifications before submitting.
 * The grading rubric will be posted to D2L.
 
+### Example Tests
+Text to be encoded: “abcde”<br>
+Cipher: “bcdefghijklmnopqrstuvwxyza”<br>
+Code result: “bcdef”<br>
+
+Text to be decoded: “abcde”<br>
+Cipher: “bcdefghijklmnopqrstuvwxyza”<br>
+Code result: “zabcd”<br>
+
+Text to be encoded: “Tell me and I forget. Teach me and I remember. Involve me and I learn. - Benjamin Franklin”<br>
+Cipher: “bcdefghijklmnopqrstuvwxyza”<br>
+Code result: “ufmmnfboejgpshfuufbdinfboejsfnfncfsjowpmwfnfboejmfbsocfokbnjogsbolmjo”<br>
+
+Text to be decoded: “uifcftuboenptucfbvujgvmuijohtjouifxpsmedboopucftffopsfwfoupvdifeuifznvtucfgfmuxjuiuififbsuifmfolfmmfs”<br>
+Cipher: “bcdefghijklmnopqrstuvwxyza”<br>
+Code result: “thebestandmostbeautifulthingsintheworldcannotbeseenoreventouchedtheymustbefeltwiththehearthelenkeller”<br>
+
 ## 📝 Assignment Tasks
-* Make sure to watch video lessons 15 - 17, labs 6 and 7, and review the corresponding Jupyter Notebooks.
+* Make sure to watch video lessons 8 - 14 and review the corresponding Jupyter Notebooks and lab sessions.
 * Clone this repository to your local computer.
 * Open VSCode and start a new terminal. Make sure that your `ensf592` environment is activated.
-* `school_data.py` is provided as a starting point. Fill in the header with your own information.
-* Remember to test your program execution via the terminal: `python school_data.py`
+* `encryption.py` is provided as a starting point. Fill in the header with your own information.
+* Remember to test your program execution via the terminal: `python encryption.py`
 * Take a screenshot of your successful program run and upload it to your assignment repository.
 * Commit your screenshot and code.
 * Push your local git history to github: `git push origin main`
 * Submit your repository HTTPS link to the Assignment 3 D2L dropbox.
-* Tip: If you want to learn more about a specific aspect of a Python object or the functionality of NumPy, remember to take a look at the official documentation!
+* Tip: If you want to learn more about a specific aspect of a Python object, remember to take a look at the official documentation!
+
+
+
