@@ -1,62 +1,36 @@
-# ENSF 592 Spring 2021 - Assignment 3
+# ENSF 592 Spring 2021 - Assignment 2
 
 ## 📚 Learning Outcomes
-* Accept user input through varied menu options
-* Validate user input through exception handling
-* Process data according to specifications
-* Iterate through varied values using compound data types
-* Manipulate strings and apply regular expressions
-* Develop and implement user-defined classes
+* Perform operations on dynamically-typed variables
+* Accept and analyze user input
+* Design control flow logic using data comparisons
+* Develop and implement user-defined functions
 * Print formatted output according to given specifications
 
 ## 💻 Program Specifications
-A cipher is an algorithm used for encrypting or decrypting information. You are being asked to design a terminal-based application for encoding and decoding text based on a provided cipher algorithm.
-Your application must meet the following design specifications:
-* Your user interface should prompt the user to input the following information:
-  1. Whether they would like to encode or decode their text
-  2. Enter their text to be encoded/decoded
-  3. Enter their cipher
-* You may prompt for the input to be entered in any form or order you like, but be sure to give the user clear instructions.
-* You must validate that the provided cipher is exactly 26 elements long and only contains lowercase characters from a to z or digits from 0 to 9.
-* If the cipher does not meet the criteria, you must handle a ValueError exception by providing a message back to the user and allow them to re-enter their cipher without terminating the program.
-* Any entered string is valid for encoding/decoding, however:
-  * Any punctuation/spaces/etc. within the text should be removed- only letters are encoded/decoded.
-  * The resulting coded or decoded message must be all lowercase letters with no spaces in between.
-* Your code should include and use at least two classes of your own creation, at least three user-defined functions aside from \_\_init\_\_ or main(), at least one iterable object, and at least one regular expression.
-* Your code must follow the conventions discussed so far in the course (names_with_underscores, ClassNames, four spaces for indentations, spaces between variables/operators, comments throughout, etc.)
-* All classes and functions must contain docstring documentation.
+Design a terminal-based calculator application. Your application must meet the following design specifications:
+* Prompt the user to enter a mathematical expression that includes three integer values and two operators. You may prompt for the input to be entered in any form or order you like, but be sure to give the user clear instructions.
+* Your program must correctly calculate and print the answer to the terminal.
+* The final calculation must show the original expression and the final answer. Follow the wording template shown in this example.
+* Example: If the user input was `1 - 2 * 5`, then the output is: `Your calculated result: 1 - 2 * 5 = -9`
+* Your application must handle the order of operations correctly! i.e. * and / should be calculated before + and -
+* If any operator other than the basic four (+ - * /) is entered, give the user a feedback message such as `Entered value is not a valid operator.` and prompt for re-entry. Your program should not terminate.
+* You can assume that only valid integers will be given as numeric input. You do not need to test for their validity.
+* A screenshot with example terminal behaviour is included in the repository. This is for suggestion only, you do not need to follow this format exactly as long as all of the specifications are met.
+* Your code should include at least four user-defined functions, a mix of simple and compound data types, and at least two types of control flow statements (if/else, for, while, etc.).
+* Your code must follow the conventions discussed so far in the course (names_with_underscores, four spaces for indentations, spaces between variables/operators, comments throughout, etc.)
 * Your code will be run by the TAs as your end user.
 * FAQs about the assignment will be answered on the D2L discussion boards. Please check the boards for any clarifications before submitting.
 * The grading rubric will be posted to D2L.
 
-### Example Tests
-Text to be encoded: “abcde”<br>
-Cipher: “bcdefghijklmnopqrstuvwxyza”<br>
-Code result: “bcdef”<br>
-
-Text to be decoded: “abcde”<br>
-Cipher: “bcdefghijklmnopqrstuvwxyza”<br>
-Code result: “zabcd”<br>
-
-Text to be encoded: “Tell me and I forget. Teach me and I remember. Involve me and I learn. - Benjamin Franklin”<br>
-Cipher: “bcdefghijklmnopqrstuvwxyza”<br>
-Code result: “ufmmnfboejgpshfuufbdinfboejsfnfncfsjowpmwfnfboejmfbsocfokbnjogsbolmjo”<br>
-
-Text to be decoded: “uifcftuboenptucfbvujgvmuijohtjouifxpsmedboopucftffopsfwfoupvdifeuifznvtucfgfmuxjuiuififbsuifmfolfmmfs”<br>
-Cipher: “bcdefghijklmnopqrstuvwxyza”<br>
-Code result: “thebestandmostbeautifulthingsintheworldcannotbeseenoreventouchedtheymustbefeltwiththehearthelenkeller”<br>
-
 ## 📝 Assignment Tasks
-* Make sure to watch video lessons 8 - 14 and review the corresponding Jupyter Notebooks and lab sessions.
+* Make sure to watch video lessons 1 - 7 and review the corresponding Jupyter Notebooks and lab sessions.
 * Clone this repository to your local computer.
 * Open VSCode and start a new terminal. Make sure that your `ensf592` environment is activated.
-* `encryption.py` is provided as a starting point. Fill in the header with your own information.
-* Remember to test your program execution via the terminal: `python encryption.py`
+* `calculator.py` is provided as a starting point. Fill in the header with your own information.
+* Remember to test your program execution via the terminal: `python calculator.py`
 * Take a screenshot of your successful program run and upload it to your assignment repository.
 * Commit your screenshot and code.
 * Push your local git history to github: `git push origin main`
-* Submit your repository HTTPS link to the Assignment 3 D2L dropbox.
+* Submit your repository HTTPS link to the Assignment 2 D2L dropbox.
 * Tip: If you want to learn more about a specific aspect of a Python object, remember to take a look at the official documentation!
-
-
-
